@@ -17,8 +17,8 @@ function format() {
         .replaceAll(/ cs..../gi, '')
 
     /* Return results */
-    results.innerHTML = formatted_medications;
-    autosize(results)
+    results.value = formatted_medications;
+    autosize(results);
 
     /* Copy selected text into clipboard */
     navigator.clipboard.writeText(formatted_medications);
