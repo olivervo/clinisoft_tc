@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <script src="formatting.js"></script>
+    <title>Clinisoft Formatter</title>
+</head>
+
+<body>
+    <div class="flex flex-col items-center w-full">
+        <div class="font-bold p-6 mt-20">Formattera läkemedelslistan här</div>
+
+        <textarea id="medications" name="medications" class="w-[800px] p-4 bg-gray-50 h-48 whitespace-pre rounded"></textarea>
+
+        <button class="mt-4 bg-gray-500 text-white py-2 px-4 rounded" onclick="format()">Formattera</button>
+
+        <textarea id="results" class="bg-gray-50 mt-4 w-[800px] p-4 rounded" disabled></textarea>
+
+        <div class="text-xs p-6">Skapad av Oliver von Olnhausen</div>
+
+    </div>
+</body>
