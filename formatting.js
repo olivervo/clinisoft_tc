@@ -7,7 +7,7 @@ function format() {
         .replaceAll(/[ \t]+/g, ' ').trim()
         /* Remove spaces at line start */
         .replaceAll(/^\s/mg, '')
-        /* Replace Swedich chars */
+        /* Replace Swedish chars */
         .replaceAll(/[‰]/g, 'ä')
         .replaceAll(/[ˆ]/g, 'ö')
         /* Remove ... , @ */
@@ -15,6 +15,7 @@ function format() {
         /* Remove HSAID */
         .replaceAll(/ \(CS....\)/g, '')
         .replaceAll(/ cs..../gi, '')
+        /* Replace dosage intervals */
         .replaceAll(/\/ 24 h/g, 'x 1')
         .replaceAll(/\/ 12 h/g, 'x 2')
         .replaceAll(/\/ 8 h/g, 'x 3')
