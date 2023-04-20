@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
     <link href="dist/output.css" rel="stylesheet">
     <script src="formatting.js"></script>
     <title>Clinisoft Formatter</title>
@@ -12,10 +13,16 @@
 
         <textarea id="medications" name="medications" class="w-[820px] p-4 bg-gray-50 h-48 whitespace-pre rounded" oninput="autosize(this);"></textarea>
 
-        <button class="mt-4 bg-green-500 text-white py-2 px-8 rounded" onclick="format()">Formattera</button>
-        <button class="mt-4 text-red-700 rounded text-sm" onclick="reset();">Nollställ</button>
-
-        <textarea id="results" class="bg-gray-50 h-48 mt-4 w-[820px] p-4 rounded" disabled></textarea>
+        <div class="flex mt-8">
+            <button class="text-red-700 rounded text-sm px-8" onclick="reset();">Nollställ</button>
+            <button class="bg-green-500 text-white py-2 rounded flex items-center px-8" onclick="format()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-0 h-0 mr-2 -ml-2 opacity-0 transition-all duration-150" id="success">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Formattera</button>
+            <button class="text-black rounded text-sm px-8" onclick="copy();">Kopiera</button>
+        </div>
+        <textarea id="results" class="bg-gray-50 h-48 mt-8 w-[820px] p-4 rounded" disabled></textarea>
 
         <div class="text-xs p-6">Skapad med <span class="text-red-800">&hearts;</span> av Oliver von Olnhausen</div>
         <a href="https://github.com/olivervo/medications_formatter" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=Flat-square&logo=github&logoColor=white" alt=""></a>
