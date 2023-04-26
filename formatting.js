@@ -10,17 +10,23 @@ function format() {
         /* Replace Swedish chars */
         .replaceAll(/[‰]/g, 'ä')
         .replaceAll(/[ˆ]/g, 'ö')
-        /* Remove ... , @ */
-        .replaceAll(/[...]|,|@/g, '')
+        /* Remove @ */
+        .replaceAll(/@/g, '')
         /* Remove HSAID */
-        .replaceAll(/ \(CS....\)/g, '')
+        .replaceAll(/ \(cs....\)\,|cs....\,/gi, '')
+        .replaceAll(/ cs....\.\.\./gi, '')
+        .replaceAll(/ \(cs....\)/gi, '')
         .replaceAll(/ cs..../gi, '')
+
         /* Replace dosage intervals */
         .replaceAll(/\/ 24 h/g, 'x 1')
         .replaceAll(/\/ 12 h/g, 'x 2')
         .replaceAll(/\/ 8 h/g, 'x 3')
         .replaceAll(/\/ 6 h/g, 'x 4')
         .replaceAll(/\/ 4 h/g, 'x 6')
+
+        /* Replace ... with - */
+        .replaceAll(/(\d)\.\.\.(\d)/g, '$1-$2')
 
     /* Return results */
     results.value = formatted_medications;
