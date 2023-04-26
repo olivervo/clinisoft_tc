@@ -4,7 +4,8 @@ function format() {
 
     formatted_medications = medications
         /* Remove extra spaces */
-        .replaceAll(/[ \t]+/g, ' ').trim()
+        .replaceAll(/[ \t]+/g, ' ')
+
         /* Remove spaces at line start */
         .replaceAll(/^\s/mg, '')
         /* Replace Swedish chars */
@@ -27,6 +28,9 @@ function format() {
 
         /* Replace ... with - */
         .replaceAll(/(\d)\.\.\.(\d)/g, '$1-$2')
+
+        /* Trim trailing spaces */
+        .replaceAll(/\s+$/gm, '')
 
     /* Return results */
     results.value = formatted_medications;
